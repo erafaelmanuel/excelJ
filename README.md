@@ -20,9 +20,9 @@ allprojects {
 Add this to your app build.gradle:
 
 ```
-	dependencies {
-	        compile 'com.github.erafaelmanuel:jexcel:596f8f7e5d'
-	}
+dependencies {
+	compile 'com.github.erafaelmanuel:jexcel:596f8f7e5d'
+}
 ```
 
 <b>Maven:</b>
@@ -41,9 +41,9 @@ Add the following to the <repositories> section of your pom.xml:
 Add the following to the <dependencies> section of your pom.xml:
 
 ```
-	<dependency>
-	    <groupId>com.github.erafaelmanuel</groupId>
-	    <artifactId>jexcel</artifactId>
-	    <version>596f8f7e5d</version>
-	</dependency>
+<dependency>
+    <groupId>com.github.erafaelmanuel</groupId>
+    <artifactId>jexcel</artifactId>
+    <version>596f8f7e5d</version>
+</dependency>
 ```
