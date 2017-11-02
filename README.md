@@ -1,5 +1,5 @@
 # excelj
-Library that make your java object convert into excel file just by adding annotation in your class
+Excelj is a small framework to convert your java objects into a spreadsheet with just adding an annotation in your classes.
 
 <b><h1>About</h1></b>
 
