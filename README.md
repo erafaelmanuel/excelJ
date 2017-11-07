@@ -1,5 +1,7 @@
-# excelj
-Excelj is a small framework for binding a java objects into a spreadsheet with adding annotation in a class.
+# ExcelJ [![](https://jitpack.io/v/erafaelmanuel/excelj.svg)](https://jitpack.io/#erafaelmanuel/excelj)
+Excelj is a small framework for binding a java objects into a spreadsheet with adding annotation in a class. <br />
+For more questions or suggestions please contact me at erafaelmanuel@gmail.com
+<br />
 
 <b><h1>Usage</h1></b>
 
@@ -74,7 +76,7 @@ allprojects {
 
 dependencies {
    ...
-   compile 'com.github.erafaelmanuel:jexcel:596f8f7e5d'
+   compile 'com.github.erafaelmanuel:excelj:v1.0'
 }
 ```
 
@@ -93,10 +95,9 @@ dependencies {
 ...
 
 <dependency>
-    <groupId>com.github.erafaelmanuel</groupId>
-    <artifactId>jexcel</artifactId>
-    <version>596f8f7e5d</version>
+ <groupId>com.github.erafaelmanuel</groupId>
+ <artifactId>excelj</artifactId>
+ <version>v1.0</version>
 </dependency>
-```
 
-For more questions or suggestions please contact me at erafaelmanuel@gmail.com
+```
