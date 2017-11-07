@@ -49,7 +49,7 @@ Main.class
   Initializer.hideLogs();
 ```
 
-* How to change the file and directory of a sheet
+* How to change the file name and directory of a sheet
 ```js
   ...
   
