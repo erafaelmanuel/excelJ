@@ -1,5 +1,5 @@
 # excelj
-Excelj is a small framework to convert your java objects into a spreadsheet with just adding an annotation in your classes.
+Excelj is a small framework to bind your java objects into a spreadsheet with adding an annotation in your classes.
 
 <b><h1>About</h1></b>
 
