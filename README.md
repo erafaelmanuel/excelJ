@@ -83,7 +83,7 @@ dependencies {
 * Maven
 
 ```html
-//Add the following to your pom.xml:
+<!-- Add the following to your pom.xml -->
 
 <repositories>
   <repository>
