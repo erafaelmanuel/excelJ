@@ -3,9 +3,9 @@ package io.ermdev.excelj.test;
 import io.ermdev.excelj.annotation.Column;
 import io.ermdev.excelj.annotation.Sheet;
 
-@Sheet
+@Sheet(dir = "document/sample")
 public class Student {
-	
+
 	@Column
 	private int id;
 	

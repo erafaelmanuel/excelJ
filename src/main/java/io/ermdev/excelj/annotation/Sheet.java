@@ -32,14 +32,14 @@ public @interface Sheet {
 	String dir() default "";
 	
 	/**
-	 * 
+	 * version of the file
 	 * @return
 	 */
 
 	Version version() default Version.XLSX;
 	
 	/**
-	 * 
+	 * Number of column
 	 * @return
 	 */
 

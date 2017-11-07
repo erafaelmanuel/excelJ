@@ -10,7 +10,8 @@ public enum Version {
 		this.val = val;
 	}
 
-	public String val() {
+	@Override
+	public String toString() {
 		return val;
 	}
 }

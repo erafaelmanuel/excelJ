@@ -15,8 +15,9 @@ import java.lang.annotation.Target;
 public @interface Column {
 	
 	/**
-	 * 
-	 * @return
+	 * Name or title of the column
+	 * @return if empty, it will be replace with the name of the variable name
+	 *
 	 */
 
 	String name() default "";

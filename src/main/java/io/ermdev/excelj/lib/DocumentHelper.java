@@ -1,40 +1,47 @@
 package io.ermdev.excelj.lib;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.lang.reflect.Field;
-import java.util.List;
-
 import io.ermdev.excelj.annotation.Column;
-import io.ermdev.excelj.annotation.Sheet;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.lang.reflect.Field;
+import java.util.List;
+
 public class DocumentHelper {
 
-	public static void createFile(String name, Sheet entity, List<String> columns) {
+	public static void createFile(String name, String fileName, List<String> columns) {
 		try {
-			XSSFWorkbook workbook = new XSSFWorkbook();
-	        XSSFSheet sheet = workbook.createSheet(name);
-	        
-	        final File file = new File(name + ".xlsx");
+			new File(fileName.split(name)[0]).mkdirs();
+		} catch (ArrayIndexOutOfBoundsException e) {
+			e.printStackTrace();
+		}
+		try {
+			final XSSFWorkbook workbook = new XSSFWorkbook();
+	        final XSSFSheet sheet = workbook.createSheet(name);
+	        final File file = new File(fileName);
 	        
 	        Row row = sheet.createRow(0);
 	        int colNum = 0;
 	        for(String col : columns) {
 	        	Cell cell = row.createCell(colNum++);
                 if (col != null) {
-                    cell.setCellValue((String) col);
+                    cell.setCellValue(col);
                 }
 	        }
-	       
+
 	        FileOutputStream fos = new FileOutputStream(file);
             workbook.write(fos);
-            workbook = null;
-		}catch(Exception e) {
+
+            fos.flush();
+            fos.close();
+
+		}catch(IOException e) {
 			e.printStackTrace();
 		}
 	}
