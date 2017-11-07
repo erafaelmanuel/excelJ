@@ -40,7 +40,7 @@ Main.class
  factory.save(Arrays.asList(new Dog("Kelvin Datu"), new Dog("Ralen Mandap")));
 ```
 
-<b><h1>Questions</h1></b>
+<b><h1>FAQs</h1></b>
 
 * How to hide the logs
 ```js
