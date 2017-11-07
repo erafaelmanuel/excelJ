@@ -1,49 +1,102 @@
 # excelj
 Excelj is a small framework for binding a java objects into a spreadsheet with adding annotation in a class.
 
-<b><h1>About</h1></b>
-
 <b><h1>Usage</h1></b>
-<b>Gradle dependency:</b>
 
-Add the following to your project level build.gradle:
-
+Annotations
 ```
+ @Sheet - add it to your class to make it available for binding.
+ @Column - mark the instance variables as spreadsheet column 
+```
+
+<b>Example</b>
+
+Dog.class
+```js
+ @Sheet
+ class Dog {
+     @Column(name="Dog Name")
+     String name;
+    
+     ...
+ }
+```
+Main.class
+```js
+ ...
+ 
+ //Create a factory
+ ExcelJ factory = new ExcelJ();
+ 
+ //File "Dog.xlxs" will create on your project's root directory 
+ //Note the class name is the default file name
+ 
+ factory.save(new Dog("Kelvin Datu"));
+ 
+ //Or save even a list
+ 
+ factory.save(Arrays.asList(new Dog("Kelvin Datu"), new Dog("Ralen Mandap")));
+```
+
+<b><h1>Questions</h1></b>
+
+* How to hide the logs
+```js
+  ...
+  
+  Initializer.hideLogs();
+```
+
+* How to change the file and directory of a sheet
+```js
+  ...
+  
+  //You can configure it on @Sheet
+  @Sheet(name="[FILE_NAME]", dir="[DIRECTORY]")
+```
+
+<b><h1>Downloads</h1></b>
+
+* Gradle
+
+```js
+
+//Add the following to your project level build.gradle:
+
 allprojects {
   repositories {
     ...
     maven { url 'https://jitpack.io' }
   }
 }
-```
 
-Add this to your app build.gradle:
+//Add this to your app build.gradle:
 
-```
 dependencies {
-	compile 'com.github.erafaelmanuel:jexcel:596f8f7e5d'
+   ...
+   compile 'com.github.erafaelmanuel:jexcel:596f8f7e5d'
 }
 ```
 
-<b>Maven:</b>
+* Maven
 
-Add the following to the <repositories> section of your pom.xml:
+```html
+//Add the following to your pom.xml:
 
-```
 <repositories>
   <repository>
       <id>jitpack.io</id>
       <url>https://jitpack.io</url>
   </repository>
 </repositories>
-```
 
-Add the following to the <dependencies> section of your pom.xml:
+...
 
-```
 <dependency>
     <groupId>com.github.erafaelmanuel</groupId>
     <artifactId>jexcel</artifactId>
     <version>596f8f7e5d</version>
 </dependency>
 ```
+
+For more questions or suggestions please contact me at erafaelmanuel@gmail.com
