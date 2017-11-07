@@ -1,4 +1,4 @@
-package io.ermdev.excelj.lib;
+package io.ermdev.excelj.core;
 
 import io.ermdev.excelj.annotation.Column;
 import org.apache.poi.ss.usermodel.Cell;

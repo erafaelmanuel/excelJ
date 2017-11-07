@@ -2,7 +2,7 @@ package io.ermdev.excelj.test;
 
 import io.ermdev.excelj.annotation.Column;
 import io.ermdev.excelj.annotation.Sheet;
-import io.ermdev.excelj.lib.Version;
+import io.ermdev.excelj.core.Version;
 
 @Sheet(name="dog", version= Version.XLSX)
 public class Dog {

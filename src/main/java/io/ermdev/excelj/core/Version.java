@@ -1,4 +1,4 @@
-package io.ermdev.excelj.lib;
+package io.ermdev.excelj.core;
 
 public enum Version {
 	

@@ -5,7 +5,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import io.ermdev.excelj.lib.Version;
+import io.ermdev.excelj.core.Version;
 
 /**
  * 

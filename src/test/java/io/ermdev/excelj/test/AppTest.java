@@ -1,8 +1,8 @@
 package io.ermdev.excelj.test;
 
 import io.ermdev.excelj.exception.UnEnabledToParseException;
-import io.ermdev.excelj.lib.ExcelJ;
-import io.ermdev.excelj.lib.Initializer;
+import io.ermdev.excelj.core.ExcelJ;
+import io.ermdev.excelj.core.Initializer;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -74,6 +74,7 @@ public class AppTest {
         }
     }
 
+    @Ignore
     @Test
     public void multipleStudents() {
         try {

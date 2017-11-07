@@ -1,4 +1,4 @@
-package io.ermdev.excelj.lib;
+package io.ermdev.excelj.core;
 
 import java.io.File;
 import java.lang.reflect.Field;
