@@ -5,7 +5,7 @@ For more questions or suggestions please contact me at erafaelmanuel@gmail.com
 
 <b><h1>Usage</h1></b>
 
-Annotations
+<b>Annotations</b>
 ```
  @Sheet - add it to your class to make it available for binding.
  @Column - mark the instance variables as spreadsheet column 
@@ -95,9 +95,9 @@ dependencies {
 ...
 
 <dependency>
- <groupId>com.github.erafaelmanuel</groupId>
- <artifactId>excelj</artifactId>
- <version>v1.0</version>
+  <groupId>com.github.erafaelmanuel</groupId>
+  <artifactId>excelj</artifactId>
+  <version>v1.0</version>
 </dependency>
 
 ```
