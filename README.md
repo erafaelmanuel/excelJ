@@ -25,7 +25,6 @@ Dog.class
 ```
 Main.class
 ```js
- ...
  //Create a factory
  ExcelJ factory = new ExcelJ();
  
@@ -51,7 +50,6 @@ class Dog {
 
 Main.class
 ```js
- ...
  //load multiple dogs
  List<Dog> dogs = factory.load(Dog.class);
  
@@ -65,15 +63,11 @@ Main.class
 
 * How to hide the logs
 ```js
-  ...
-  
   Initializer.hideLogs();
 ```
 
 * How to change the file name and directory of a sheet
 ```js
-  ...
-  
   //You can configure it on @Sheet
   @Sheet(name="[FILE_NAME]", dir="[DIRECTORY]")
 ```
@@ -88,7 +82,7 @@ Main.class
 
 allprojects {
   repositories {
-    ...
+
     maven { url 'https://jitpack.io' }
   }
 }
@@ -96,7 +90,7 @@ allprojects {
 //Add this to your app build.gradle:
 
 dependencies {
-   ...
+  
    compile 'com.github.erafaelmanuel:excelj:v1.0'
 }
 ```
@@ -113,12 +107,12 @@ dependencies {
   </repository>
 </repositories>
 
-...
-
-<dependency>
-  <groupId>com.github.erafaelmanuel</groupId>
-  <artifactId>excelj</artifactId>
-  <version>v1.0</version>
-</dependency>
+<dependencies>
+  <dependency>
+    <groupId>com.github.erafaelmanuel</groupId>
+    <artifactId>excelj</artifactId>
+    <version>v1.0</version>
+  </dependency>
+</dependencies>
 
 ```
