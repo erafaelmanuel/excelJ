@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-public class SheetFactory {
+public class ExcelJ {
 
-    private static Logger logger = Logger.getLogger(SheetFactory.class.getSimpleName());
+    private static Logger logger = Logger.getLogger(ExcelJ.class.getSimpleName());
 
     /**
      * Register does is to make an empty file for the classes annotated of @Sheet
@@ -115,11 +115,13 @@ public class SheetFactory {
                 register(c);
             }
             XSSFSheet doc = DocumentHelper.readFile(name, fileName);
-            if(doc==null)
+            if(rowNum > doc.getLastRowNum())
                 return null;
 
             int index = 0;
             for (Field field : instance.getClass().getDeclaredFields()) {
+                if(field.getAnnotation(Column.class) == null) continue;
+
                 field.setAccessible(true);
                 String value = "";
                 if(doc.getRow(rowNum).getCell(index).getCellType()== Cell.CELL_TYPE_NUMERIC)
@@ -162,6 +164,8 @@ public class SheetFactory {
                 final T instance = c.newInstance();
                 int index = 0;
                 for (Field field : instance.getClass().getDeclaredFields()) {
+                    if(field.getAnnotation(Column.class) == null) continue;
+
                     field.setAccessible(true);
                     String value = "";
                     if(doc.getRow(i).getCell(index).getCellType()== Cell.CELL_TYPE_NUMERIC)

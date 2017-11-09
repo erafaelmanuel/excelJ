@@ -1,8 +1,8 @@
 package io.ermdev.excelj.test;
 
-import io.ermdev.excelj.exception.UnEnabledToParseException;
 import io.ermdev.excelj.core.ExcelJ;
 import io.ermdev.excelj.core.Initializer;
+import io.ermdev.excelj.exception.UnEnabledToParseException;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -42,6 +42,30 @@ public class AppTest {
         dogs.addAll(Arrays.asList(dog1, dog2));
 
         customers.add(new Customer("Kelvin Datu"));
+    }
+
+    @Ignore
+    @Test
+    public void load() {
+        try {
+            Zombie zombie1 = new Zombie();
+            zombie1.isAlive = 1546;
+            zombie1.name = "Ronald";
+
+            Zombie zombie2 = new Zombie();
+            zombie2.isAlive = 345435;
+            zombie2.name = "Verlie";
+
+            factory.save(Arrays.asList(zombie1, zombie2));
+
+            factory.save(students);
+
+            //List<Zombie> zombies = new ExcelJ().load(Zombie.class);
+            System.out.println(new ExcelJ().load(Student.class));
+
+        } catch (UnEnabledToParseException e) {
+            e.printStackTrace();
+        }
     }
 
     @Ignore

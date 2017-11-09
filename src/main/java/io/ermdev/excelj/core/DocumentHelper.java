@@ -121,4 +121,25 @@ public class DocumentHelper {
 			e.printStackTrace();
 		}
 	}
+
+	public static XSSFSheet readFile(String name, String fileName) {
+		try {
+			final File file = new File(fileName);
+
+			FileInputStream fis = new FileInputStream(file);
+			XSSFWorkbook workbook = new XSSFWorkbook(fis);
+
+			XSSFSheet sheet = workbook.getSheetAt(0);
+
+			fis.close();
+			return sheet;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public static boolean isExist(String location) {
+		return new File(location).exists();
+	}
 }
