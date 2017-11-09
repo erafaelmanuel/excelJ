@@ -1,9 +1,11 @@
-# excelj
-Excelj is a small framework for binding a java objects into a spreadsheet with adding annotation in a class.
+# ExcelJ [![](https://jitpack.io/v/erafaelmanuel/excelj.svg)](https://jitpack.io/#erafaelmanuel/excelj)
+Excelj is a small framework for binding a java objects into a spreadsheet with adding annotation in a class. <br />
+For more questions or suggestions please contact me at erafaelmanuel@gmail.com
+<br />
 
 <b><h1>Usage</h1></b>
 
-Annotations
+<b>Annotations</b>
 ```
  @Sheet - add it to your class to make it available for binding.
  @Column - mark the instance variables as spreadsheet column 
@@ -38,7 +40,7 @@ Main.class
  factory.save(Arrays.asList(new Dog("Kelvin Datu"), new Dog("Ralen Mandap")));
 ```
 
-<b><h1>Questions</h1></b>
+<b><h1>FAQs</h1></b>
 
 * How to hide the logs
 ```js
@@ -47,7 +49,7 @@ Main.class
   Initializer.hideLogs();
 ```
 
-* How to change the file and directory of a sheet
+* How to change the file name and directory of a sheet
 ```js
   ...
   
@@ -74,14 +76,14 @@ allprojects {
 
 dependencies {
    ...
-   compile 'com.github.erafaelmanuel:jexcel:596f8f7e5d'
+   compile 'com.github.erafaelmanuel:excelj:v1.0'
 }
 ```
 
 * Maven
 
 ```html
-//Add the following to your pom.xml:
+<!-- Add the following to your pom.xml -->
 
 <repositories>
   <repository>
@@ -93,10 +95,9 @@ dependencies {
 ...
 
 <dependency>
-    <groupId>com.github.erafaelmanuel</groupId>
-    <artifactId>jexcel</artifactId>
-    <version>596f8f7e5d</version>
+  <groupId>com.github.erafaelmanuel</groupId>
+  <artifactId>excelj</artifactId>
+  <version>v1.0</version>
 </dependency>
-```
 
-For more questions or suggestions please contact me at erafaelmanuel@gmail.com
+```
