@@ -1,5 +1,5 @@
 # ExcelJ [![](https://jitpack.io/v/erafaelmanuel/excelj.svg)](https://jitpack.io/#erafaelmanuel/excelj)
-Excelj is a small framework for binding a java objects into a spreadsheet with adding annotation in a class. <br />
+Excelj is a very small library for binding a java objects into a spreadsheet with just adding annotation in a class. <br />
 For more questions or suggestions please contact me at erafaelmanuel@gmail.com
 <br />
 
@@ -11,7 +11,7 @@ For more questions or suggestions please contact me at erafaelmanuel@gmail.com
  @Column - mark the instance variables as spreadsheet column 
 ```
 
-<b>Example</b>
+<b>Creating a file</b>
 
 Dog.class
 ```js
@@ -39,6 +39,19 @@ Main.class
  
  factory.save(Arrays.asList(new Dog("Kelvin Datu"), new Dog("Ralen Mandap")));
 ```
+
+<b>Loading a file</b>
+
+```js
+ ...
+ //multiple dogs
+ List<Dog> dogs = factory.load(Dog.class);
+ 
+ //single dog
+ //return the dog at row 1
+ Dog dog = factory.get(Dog.class, 1);
+```
+
 
 <b><h1>FAQs</h1></b>
 
