@@ -7,7 +7,7 @@ For more questions or suggestions please contact me at erafaelmanuel@gmail.com
 
 <b>Annotations</b>
 ```
- @Sheet - add it to your class to make it available for binding.
+ @Sheet - add it to your class to make it eligible for binding.
  @Column - mark the instance variables as spreadsheet column 
 ```
 
@@ -26,28 +26,36 @@ Dog.class
 Main.class
 ```js
  ...
- 
  //Create a factory
  ExcelJ factory = new ExcelJ();
  
  //File "Dog.xlxs" will create on your project's root directory 
  //Note the class name is the default file name
- 
  factory.save(new Dog("Kelvin Datu"));
  
  //Or save even a list
- 
  factory.save(Arrays.asList(new Dog("Kelvin Datu"), new Dog("Ralen Mandap")));
 ```
 
 <b>Loading a file</b>
 
+Dog.class
+```js
+class Dog {
+ ...
+  //Add a no-arg constructor
+  public Dog() {}
+}
+
+```
+
+Main.class
 ```js
  ...
- //multiple dogs
+ //load multiple dogs
  List<Dog> dogs = factory.load(Dog.class);
  
- //single dog
+ //load a single dog
  //return the dog at row 1
  Dog dog = factory.get(Dog.class, 1);
 ```
