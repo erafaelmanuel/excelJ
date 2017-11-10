@@ -16,7 +16,7 @@ For more questions or suggestions please contact me at erafaelmanuel@gmail.com
 Dog.class
 ```js
  @Sheet
- class Dog {
+ public class Dog {
      @Column(name="Dog Name")
      String name;
     
@@ -28,11 +28,12 @@ Main.class
  //Create a factory
  ExcelJ factory = new ExcelJ();
  
- //File "Dog.xlxs" will create on your project's root directory 
+ //File "Dog.xlsx" will create on your project's root directory
+ 
  //Note the class name is the default file name
  factory.save(new Dog("Kelvin Datu"));
  
- //Or save even a list
+ //saving a list
  factory.save(Arrays.asList(new Dog("Kelvin Datu"), new Dog("Ralen Mandap")));
 ```
 
@@ -40,7 +41,7 @@ Main.class
 
 Dog.class
 ```js
-class Dog {
+public class Dog {
  ...
   //Add a no-arg constructor
   public Dog() {}
@@ -68,7 +69,8 @@ Main.class
 
 * How to change the file name and directory of a sheet
 ```js
-  //You can configure it on @Sheet
+  //add the following
+  
   @Sheet(name="[FILE_NAME]", dir="[DIRECTORY]")
 ```
 
