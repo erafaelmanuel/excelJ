@@ -1,19 +1,21 @@
 package io.ermdev.excelj.annotation;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
 import io.ermdev.excelj.core.Version;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
+
+import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+
 /**
- * 
+ *
  * @author erafaelmanuel
  *
  */
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.TYPE)
+
+@Target(TYPE)
+@Retention(RUNTIME)
 public @interface Sheet {
 
 	/**
