@@ -7,7 +7,7 @@ For more questions or suggestions please contact me at erafaelmanuel@gmail.com
 
 <b>Annotations</b>
 ```
- @Sheet - add it to your class to make it available for binding.
+ @Sheet - add it to your class to make it eligible for binding.
  @Column - mark the instance variables as spreadsheet column 
 ```
 
@@ -16,7 +16,7 @@ For more questions or suggestions please contact me at erafaelmanuel@gmail.com
 Dog.class
 ```js
  @Sheet
- class Dog {
+ public class Dog {
      @Column(name="Dog Name")
      String name;
     
@@ -25,29 +25,36 @@ Dog.class
 ```
 Main.class
 ```js
- ...
- 
  //Create a factory
  ExcelJ factory = new ExcelJ();
  
- //File "Dog.xlxs" will create on your project's root directory 
- //Note the class name is the default file name
+ //File "Dog.xlsx" will create on your project's root directory
  
+ //Note the class name is the default file name
  factory.save(new Dog("Kelvin Datu"));
  
- //Or save even a list
- 
+ //saving a list
  factory.save(Arrays.asList(new Dog("Kelvin Datu"), new Dog("Ralen Mandap")));
 ```
 
 <b>Loading a file</b>
 
+Dog.class
 ```js
+public class Dog {
  ...
- //multiple dogs
+  //Add a no-arg constructor
+  public Dog() {}
+}
+
+```
+
+Main.class
+```js
+ //load multiple dogs
  List<Dog> dogs = factory.load(Dog.class);
  
- //single dog
+ //load a single dog
  //return the dog at row 1
  Dog dog = factory.get(Dog.class, 1);
 ```
@@ -57,16 +64,13 @@ Main.class
 
 * How to hide the logs
 ```js
-  ...
-  
   Initializer.hideLogs();
 ```
 
 * How to change the file name and directory of a sheet
 ```js
-  ...
+  //add the following
   
-  //You can configure it on @Sheet
   @Sheet(name="[FILE_NAME]", dir="[DIRECTORY]")
 ```
 
@@ -80,7 +84,7 @@ Main.class
 
 allprojects {
   repositories {
-    ...
+
     maven { url 'https://jitpack.io' }
   }
 }
@@ -88,7 +92,7 @@ allprojects {
 //Add this to your app build.gradle:
 
 dependencies {
-   ...
+  
    compile 'com.github.erafaelmanuel:excelj:v1.0'
 }
 ```
@@ -105,12 +109,12 @@ dependencies {
   </repository>
 </repositories>
 
-...
-
-<dependency>
-  <groupId>com.github.erafaelmanuel</groupId>
-  <artifactId>excelj</artifactId>
-  <version>v1.0</version>
-</dependency>
+<dependencies>
+  <dependency>
+    <groupId>com.github.erafaelmanuel</groupId>
+    <artifactId>excelj</artifactId>
+    <version>v1.0</version>
+  </dependency>
+</dependencies>
 
 ```
