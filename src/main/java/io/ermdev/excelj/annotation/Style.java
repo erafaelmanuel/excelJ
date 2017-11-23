@@ -15,6 +15,6 @@ public @interface Style {
 
 
     enum Scope {
-        All, TITLE, FIELD;
+        ALL, TITLE, FIELD;
     }
 }

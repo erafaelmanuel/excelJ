@@ -78,7 +78,6 @@ public class AppTest {
         }
     }
 
-    @Ignore
     @Test
     public void multipleDogs() {
         try {
@@ -98,7 +97,6 @@ public class AppTest {
         }
     }
 
-    @Ignore
     @Test
     public void multipleStudents() {
         try {

@@ -2,7 +2,9 @@ package io.ermdev.excelj.core;
 
 import io.ermdev.excelj.annotation.Column;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -14,6 +16,24 @@ import java.lang.reflect.Field;
 import java.util.List;
 
 public class DocumentHelper {
+
+	private static XSSFFont titleFont(XSSFWorkbook workbook) {
+		XSSFFont font= workbook.createFont();
+		font.setFontHeightInPoints((short)10);
+		font.setFontName("Arial");
+		font.setBold(true);
+		font.setItalic(false);
+		return font;
+	}
+
+	private static XSSFFont defaultFont(XSSFWorkbook workbook) {
+		XSSFFont font=workbook.createFont();
+		font.setFontHeightInPoints((short)11);
+		font.setFontName("Arial");
+		font.setBold(false);
+		font.setItalic(false);
+		return font;
+	}
 
 	public static void createFile(String name, String fileName, List<String> columns) {
 		try {
@@ -28,10 +48,14 @@ public class DocumentHelper {
 	        
 	        Row row = sheet.createRow(0);
 	        int colNum = 0;
+
+			CellStyle style = workbook.createCellStyle();
+			style.setFont(titleFont(workbook));
 	        for(String col : columns) {
 	        	Cell cell = row.createCell(colNum++);
                 if (col != null) {
                     cell.setCellValue(col);
+                    cell.setCellStyle(style);
                 }
 	        }
 
@@ -75,6 +99,7 @@ public class DocumentHelper {
 		        	if (object instanceof Integer) {
 	                    cell.setCellValue((int) object);
 	                }
+	                //cell.getCellStyle().setFont(defaultFont(workbook));
 		        }
 	        }
 	        
@@ -113,6 +138,7 @@ public class DocumentHelper {
 	        	if (object instanceof Integer) {
                     cell.setCellValue((int) object);
                 }
+				//cell.getCellStyle().setFont(defaultFont(workbook));
 	        }
 	        
 	        FileOutputStream fos = new FileOutputStream(file);
