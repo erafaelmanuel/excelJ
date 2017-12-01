@@ -44,7 +44,6 @@ public class AppTest {
         customers.add(new Customer("Kelvin Datu"));
     }
 
-    @Ignore
     @Test
     public void load() {
         try {
@@ -58,10 +57,10 @@ public class AppTest {
 
             factory.save(Arrays.asList(zombie1, zombie2));
 
-            factory.save(students);
+            //factory.save(students);
 
             //List<Zombie> zombies = new ExcelJ().load(Zombie.class);
-            System.out.println(new ExcelJ().load(Student.class));
+            //System.out.println(new ExcelJ().load(Student.class));
 
         } catch (UnEnabledToParseException e) {
             e.printStackTrace();
@@ -78,6 +77,7 @@ public class AppTest {
         }
     }
 
+    @Ignore
     @Test
     public void multipleDogs() {
         try {

@@ -23,7 +23,7 @@ public @interface Sheet {
 	 * Cannot be named with special character except (_, - and .)
 	 * @return if empty return the Class simple name
 	 */
-	String name() default "";
+	String name() default "[CLASS_NAME]";
 	
 	/**
 	 * The file directory of SpreadSheet

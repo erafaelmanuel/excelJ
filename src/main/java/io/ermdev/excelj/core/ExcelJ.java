@@ -32,7 +32,8 @@ public class ExcelJ {
 
         final Sheet sheet = clazz.getAnnotation(Sheet.class);
         final List<String> columns = new ArrayList<>();
-        final String name = !sheet.name().trim().isEmpty() ? sheet.name() : clazz.getSimpleName();
+        final String name = !(sheet.name().trim().isEmpty() || sheet.name().equals("[CLASS_NAME]"))
+                ? sheet.name() : clazz.getSimpleName();
         final String fileName = (sheet.dir().equals("") ? "" : sheet.dir().concat("/")) + name.concat(".") +
                 sheet.version().toString();
 
@@ -40,7 +41,8 @@ public class ExcelJ {
         for(Field field : clazz.getDeclaredFields()) {
             Column col = field.getAnnotation(Column.class);
             if(col != null) {
-                columns.add(!col.name().trim().isEmpty() ? col.name() : field.getName().trim());
+                columns.add(!(col.name().trim().isEmpty() || col.name().equals("[FIELD_NAME]"))
+                        ? col.name() : field.getName().trim());
             }
         }
 
@@ -106,7 +108,8 @@ public class ExcelJ {
             final Sheet sheet = c.getAnnotation(Sheet.class);
             final T instance = c.newInstance();
 
-            final String name = !sheet.name().trim().isEmpty() ? sheet.name() : c.getSimpleName();
+            final String name = !(sheet.name().trim().isEmpty() || sheet.name().equals("[CLASS_NAME]"))
+                    ? sheet.name() : c.getSimpleName();
             final String fileName = (sheet.dir().equals("") ? "" : sheet.dir().concat("/")) + name.concat(".") +
                     sheet.version().toString();
 
@@ -150,7 +153,8 @@ public class ExcelJ {
             final List<T> list = new ArrayList<>();
             final Sheet sheet = c.getAnnotation(Sheet.class);
 
-            final String name = !sheet.name().trim().isEmpty() ? sheet.name() : c.getSimpleName();
+            final String name = !(sheet.name().trim().isEmpty() || sheet.name().equals("[CLASS_NAME]"))
+                    ? sheet.name() : c.getSimpleName();
             final String fileName = (sheet.dir().equals("") ? "" : sheet.dir().concat("/")) + name.concat(".") +
                     sheet.version().toString();
 

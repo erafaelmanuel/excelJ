@@ -20,6 +20,6 @@ public @interface Column {
 	 *
 	 */
 
-	String name() default "";
+	String name() default "[FIELD_NAME]";
 	Style style() default @Style;
 }
