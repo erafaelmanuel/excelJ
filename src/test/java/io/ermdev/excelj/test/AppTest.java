@@ -44,6 +44,7 @@ public class AppTest {
         customers.add(new Customer("Kelvin Datu"));
     }
 
+    @Ignore
     @Test
     public void load() {
         try {
@@ -97,6 +98,7 @@ public class AppTest {
         }
     }
 
+    @Ignore
     @Test
     public void multipleStudents() {
         try {

@@ -21,5 +21,6 @@ public @interface Column {
 	 */
 
 	String name() default "[FIELD_NAME]";
+	@Deprecated
 	Style style() default @Style;
 }
