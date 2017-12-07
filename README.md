@@ -25,9 +25,10 @@ Dog.class
 ```
 Main.class
 ```js
- //Create a factory
  ExcelJ factory = new ExcelJ();
  
+ //save
+ //with single object
  factory.save(new Dog("Kelvin Datu"));
  
  //or a list
@@ -48,10 +49,11 @@ public class Dog {
 
 Main.class
 ```js
- List<Dog> dogs = factory.load(Dog.class);
+ //get dog at row [n=1]
+ Dog dog = factory.get(Dog.class, n);
  
- //return the dog at row 1
- Dog dog = factory.get(Dog.class, 1);
+ //get all dogs
+ List<Dog> dogs = factory.load(Dog.class);
 ```
 
 
