@@ -27,8 +27,7 @@ Main.class
 ```js
  ExcelJ factory = new ExcelJ();
  
- //save
- //with single object
+ //save a single object
  factory.save(new Dog("Kelvin Datu"));
  
  //or a list
@@ -88,7 +87,7 @@ allprojects {
 
 ```js
 dependencies {
-   compile 'com.github.erafaelmanuel:excelj:v1.0'
+   compile 'com.github.erafaelmanuel:excelj:v1.1.0'
 }
 ```
 
@@ -108,7 +107,7 @@ dependencies {
   <dependency>
     <groupId>com.github.erafaelmanuel</groupId>
     <artifactId>excelj</artifactId>
-    <version>v1.0</version>
+    <version>v1.1.0</version>
   </dependency>
 </dependencies>
 ```
