@@ -1,5 +1,5 @@
 # ExcelJ [![](https://jitpack.io/v/erafaelmanuel/excelj.svg)](https://jitpack.io/#erafaelmanuel/excelj)
-Excelj is a very small library for binding a java objects into a spreadsheet with just adding annotation in a class. <br />
+Excelj is a very small library for binding a java object into a spreadsheet using annotations <br />
 For more questions or suggestions please contact me at erafaelmanuel@gmail.com
 <br />
 
@@ -7,7 +7,7 @@ For more questions or suggestions please contact me at erafaelmanuel@gmail.com
 
 <b>Annotations</b>
 ```
- @Sheet - add it to your class to make it eligible for binding.
+ @Sheet - make the class eligible for binding.
  @Column - mark the instance variables as spreadsheet column 
 ```
 
@@ -25,15 +25,12 @@ Dog.class
 ```
 Main.class
 ```js
- //Create a factory
  ExcelJ factory = new ExcelJ();
  
- //File "Dog.xlsx" will create on your project's root directory
- 
- //Note the class name is the default file name
+ //save a single object
  factory.save(new Dog("Kelvin Datu"));
  
- //saving a list
+ //or a list
  factory.save(Arrays.asList(new Dog("Kelvin Datu"), new Dog("Ralen Mandap")));
 ```
 
@@ -43,7 +40,7 @@ Dog.class
 ```js
 public class Dog {
  ...
-  //Add a no-arg constructor
+  //constructor with no arg is required
   public Dog() {}
 }
 
@@ -51,12 +48,11 @@ public class Dog {
 
 Main.class
 ```js
- //load multiple dogs
- List<Dog> dogs = factory.load(Dog.class);
+ //get dog at row [n=1]
+ Dog dog = factory.get(Dog.class, n);
  
- //load a single dog
- //return the dog at row 1
- Dog dog = factory.get(Dog.class, 1);
+ //get all dogs
+ List<Dog> dogs = factory.load(Dog.class);
 ```
 
 
@@ -76,45 +72,54 @@ Main.class
 
 <b><h1>Downloads</h1></b>
 
+Download the latest jar [here](https://jitpack.io/#erafaelmanuel/excelj) or via:
+
 * Gradle
 
 ```js
-
-//Add the following to your project level build.gradle:
-
 allprojects {
   repositories {
 
     maven { url 'https://jitpack.io' }
   }
 }
+```
 
-//Add this to your app build.gradle:
-
+```js
 dependencies {
-  
-   compile 'com.github.erafaelmanuel:excelj:v1.0'
+   compile 'com.github.erafaelmanuel:excelj:v1.1.0'
 }
 ```
 
 * Maven
 
 ```html
-<!-- Add the following to your pom.xml -->
-
 <repositories>
   <repository>
       <id>jitpack.io</id>
       <url>https://jitpack.io</url>
   </repository>
 </repositories>
+```
 
+```html
 <dependencies>
   <dependency>
     <groupId>com.github.erafaelmanuel</groupId>
     <artifactId>excelj</artifactId>
-    <version>v1.0</version>
+    <version>v1.1.0</version>
   </dependency>
 </dependencies>
+```
 
+<b><h1>License</h1></b>
+
+```
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
