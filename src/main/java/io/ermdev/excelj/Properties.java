@@ -1,4 +1,4 @@
-package io.ermdev.excelj.annotation;
+package io.ermdev.excelj;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

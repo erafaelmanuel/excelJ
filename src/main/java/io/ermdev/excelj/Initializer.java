@@ -1,6 +1,4 @@
-package io.ermdev.excelj.core;
-
-import io.ermdev.excelj.config.AppConfig;
+package io.ermdev.excelj;
 
 public class Initializer {
 

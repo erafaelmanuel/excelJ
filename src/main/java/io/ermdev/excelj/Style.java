@@ -1,4 +1,4 @@
-package io.ermdev.excelj.annotation;
+package io.ermdev.excelj;
 
 import org.apache.poi.hssf.util.HSSFColor;
 
@@ -16,7 +16,6 @@ public @interface Style {
 
     Scope scope() default Scope.TITLE;
     short color() default HSSFColor.BLACK.index;
-
 
     enum Scope {
         ALL, TITLE, FIELD;

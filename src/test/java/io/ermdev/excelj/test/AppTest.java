@@ -1,8 +1,8 @@
 package io.ermdev.excelj.test;
 
-import io.ermdev.excelj.core.ExcelJ;
-import io.ermdev.excelj.core.Initializer;
-import io.ermdev.excelj.exception.UnEnabledToParseException;
+import io.ermdev.excelj.ExcelJ;
+import io.ermdev.excelj.Initializer;
+import io.ermdev.excelj.UnEnabledToParseException;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;

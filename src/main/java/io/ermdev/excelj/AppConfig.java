@@ -1,4 +1,4 @@
-package io.ermdev.excelj.config;
+package io.ermdev.excelj;
 
 public class AppConfig {
     public static boolean SHOW_LOG = true;

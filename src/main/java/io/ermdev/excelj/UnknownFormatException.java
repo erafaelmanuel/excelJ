@@ -1,4 +1,4 @@
-package io.ermdev.excelj.exception;
+package io.ermdev.excelj;
 
 public class UnknownFormatException extends Exception{
 
