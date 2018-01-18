@@ -1,72 +1,49 @@
 # ExcelJ [![](https://jitpack.io/v/erafaelmanuel/excelj.svg)](https://jitpack.io/#erafaelmanuel/excelj)
-Excelj is a very small library for binding a java object into a spreadsheet using annotations <br />
+Excelj is a very small library for binding a java object into a spreadsheet using java reflection <br />
 For more questions or suggestions please contact me at erafaelmanuel@gmail.com
 <br />
 
-<b><h1>Usage</h1></b>
+## Usage
 
-<b>Annotations</b>
-```
- @Sheet - make the class eligible for binding.
- @Column - mark the instance variables as spreadsheet column 
-```
-
-<b>Creating a file</b>
-
-Dog.class
-```js
+```java
  @Sheet
  public class Dog {
      @Column(name="Dog Name")
      String name;
-    
      ...
  }
 ```
-Main.class
-```js
+
+```java
  ExcelJ factory = new ExcelJ();
- 
- //save a single object
+```
+To save an object
+```java
  factory.save(new Dog("Kelvin Datu"));
- 
- //or a list
+```
+To save a list of objects
+```java
  factory.save(Arrays.asList(new Dog("Kelvin Datu"), new Dog("Ralen Mandap")));
 ```
-
-<b>Loading a file</b>
-
-Dog.class
-```js
-public class Dog {
- ...
-  //constructor with no arg is required
-  public Dog() {}
-}
-
-```
-
-Main.class
-```js
+Binding a spreadsheet to a java object
+```java
  //get dog at row [n=1]
  Dog dog = factory.get(Dog.class, n);
- 
+```
+```java
  //get all dogs
  List<Dog> dogs = factory.load(Dog.class);
 ```
 
+## FAQs
 
-<b><h1>FAQs</h1></b>
-
-* How to hide the logs
+How to hide the logs
 ```js
   Initializer.hideLogs();
 ```
-
-* How to change the file name and directory of a sheet
+How to change the file name and directory of a sheet
 ```js
   //add the following
-  
   @Sheet(name="[FILE_NAME]", dir="[DIRECTORY]")
 ```
 
